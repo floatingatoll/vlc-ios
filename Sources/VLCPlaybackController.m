@@ -119,7 +119,7 @@ typedef NS_ENUM(NSUInteger, VLCAspectRatio) {
 
         _metadata = [VLCMetaData new];
         _dialogProvider = [[VLCDialogProvider alloc] initWithLibrary:[VLCLibrary sharedLibrary] customUI:YES];
-        _dialogProvider.customRenderer = self;
+        _dialogProvider.customRenderer = (id<VLCCustomDialogRendererProtocol>)self;
 
         _playbackSessionManagementLock = [[NSLock alloc] init];
         _shuffleMode = NO;
