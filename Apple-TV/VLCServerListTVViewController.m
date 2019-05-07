@@ -165,7 +165,7 @@
     }
 
     if ([service respondsToSelector:@selector(loginInformation)]) {
-        VLCNetworkServerLoginInformation *login = service.loginInformation;
+        VLCNetworkServerLoginInformation *login = (VLCNetworkServerLoginInformation*)service.loginInformation;
         if (!login) return;
 
         NSError *error = nil;
